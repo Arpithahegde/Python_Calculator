@@ -27,11 +27,7 @@ RUN useradd --create-home appuser
 
 USER appuser
 
-RUN useradd --create-home appuser1
 
-COPY requirements.txt .
-
-RUN pip install --no-cache-dir -r requirements.txt
 
 
 EXPOSE 5000
