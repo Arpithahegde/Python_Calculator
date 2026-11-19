@@ -14,8 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build Docker image
-        run: docker build -t python-calculator:test .
+      - name: Build Docker test image
+        run: docker build --target test -t python-calculator:test .
 
       - name: Run unit tests inside Docker
-        run: docker run --rm --entrypoint python python-calculator:test -m pytest -v
+        run: docker run --rm python-calculator:test
+
+      - name: Build production Docker image
+        run: docker build --target runtime -t python-calculator:latest .
