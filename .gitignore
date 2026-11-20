@@ -13,3 +13,8 @@ __pycache__/
 
 # Logs
 *.log
+
+# Local AWS IAM configuration
+ecs-task-trust.json
+github-oidc-trust.json
+pass-ecs-role.json
